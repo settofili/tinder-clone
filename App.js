@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
      <Header />
-       {/* Tinder Cards */}
+       {/* Tinder Cards ... that is what we are about to build now */}
          {/* Buttons below tinder cards */}
 
            {/* Chat Screen */}
