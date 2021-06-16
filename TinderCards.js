@@ -7,16 +7,20 @@ import database from './firebase';
 
 function TinderCards () {
     const [people, setPeople] = useState([]);
-    
+
     // Piece of code which runs based on a condition
     useEffect(() => {
         // this is where the code runs..
 
-        database.collection('people').onSnapshot(snapshot => (
-                setPeople(snapshot.docs.map(doc => doc.data()))
-            ))
-        // this will run ONCE when the component loads, and never again
-        
+        const unsubscribe = database
+        .collection('people')
+        .onSnapshot((snapshot) =>
+            setPeople(snapshot.docs.map((doc) => doc.data()))
+        );
+        return () => {
+            // this is the cleanup...
+            unsubscribe();
+        };    
 }, []);
 
     // BAD
