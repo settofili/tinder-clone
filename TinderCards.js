@@ -1,19 +1,23 @@
 import React from 'react';
 import TinderCard from "react-tinder-card";
 import { useState } from 'react';
+import { useEffect } from 'react';
 import './TinderCards.css';
+import database from './firebase';
 
 function TinderCards () {
-    const [people, setPeople] = useState([
-        {
-            name: 'Marriage Counselling',
-            url: 'https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTQyMDA0NDgwMzUzNzcyNjA2/mark-zuckerberg_gettyimages-512304736jpg.jpg'
-        },
-        {
-             name: 'Hormonal Replacement Therapy',
-            url: 'https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTY2MzU3OTcxMTUwODQxNTM1/steve-jobs--david-paul-morrisbloomberg-via-getty-images.jpg'
-        }
-    ]);
+    const [people, setPeople] = useState([]);
+    
+    // Piece of code which runs based on a condition
+    useEffect(() => {
+        // this is where the code runs..
+
+        database.collection('people').onSnapshot(snapshot => (
+                setPeople(snapshot.docs.map(doc => doc.data()))
+            ))
+        // this will run ONCE when the component loads, and never again
+        
+}, []);
 
     // BAD
     //  const people = [];
