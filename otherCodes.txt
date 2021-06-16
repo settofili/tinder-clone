@@ -1,0 +1,6 @@
+{/*<Header /> */
+    {/* Tinder Cards */}
+         {/* Buttons below tinder cards */}
+
+           {/* Chat Screen */}
+             {/* Individual Chat Screen */}
