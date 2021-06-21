@@ -8,14 +8,19 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-     <Header />
+     
      <Router>
+       <Header />
        <Switch>
-         <Route path="/login">
-            <h1> I am the login page</h1>
+         <Route path="/chat">
+            <h1> No new notifications!</h1>
          </Route>
          <Route path="/profile">
-            <h1> I am the profile page</h1>
+
+            <img 
+                className="dashboard__image"
+                src="https://i.imgur.com/QwYiX5q.png" alt=""/>
+
          </Route>
          <Route path="/">
             <TinderCards />
