@@ -10,19 +10,13 @@ function App() {
     <div className="App">
      
      <Router>
-       <Header />
        <Switch>
          <Route path="/chat">
+         <Header backButton="/" />
             <h1> No new notifications!</h1>
          </Route>
-         <Route path="/profile">
-
-            <img 
-                className="dashboard__image"
-                src="https://i.imgur.com/QwYiX5q.png" alt=""/>
-
-         </Route>
          <Route path="/">
+         <Header />
             <TinderCards />
             <SwipeButtons />
          </Route>
