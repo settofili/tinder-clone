@@ -4,6 +4,7 @@ import TinderCards from "./TinderCards";
 import SwipeButtons from './SwipeButtons';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
+import Chats from "./Chats";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
        <Switch>
          <Route path="/chat">
          <Header backButton="/" />
-            <h1> No new notifications!</h1>
+            <Chats />
          </Route>
          <Route path="/">
          <Header />
