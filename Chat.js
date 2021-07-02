@@ -1,11 +1,18 @@
 import React from 'react';
 import Avatar from "@material-ui/core/Avatar";
+import "./Chats.css";
 
-function Chat({name, message, profilePic, timetamp}) {
-    return <div className="chat"> 
+function Chat({name, message, profilePic, timestamp }) {
+    return ( 
+    <div className="chat"> 
     <Avatar className="chat__image" alt={name} src={profilePic} />
-    
-    </div>;
+   <div chatName="chat__details">
+       <h2>{name}</h2>
+       <p>{message}</p>
+    </div>
+    <p className="chat__timestamp">{timestamp}</p> 
+    </div>
+    );
 }
 
 export default Chat;

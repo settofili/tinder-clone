@@ -4,13 +4,13 @@ import './Chats.css';
 import Chat from "./Chat";
 
 function Chats() {
-    return 
+    return ( 
         <div className="chats">
             <Chat
             name="Sarah"
             message="YO whats up"
             timestamp="40 seconds ago"
-            profilePic="..."
+            profilePic="https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_20180626.jpg"
             />
             <Chat
             name="Ellen"
@@ -31,7 +31,7 @@ function Chats() {
             profilePic="..."
             />
         </div>
-
-}
+        )
+};
 
 export default Chats;
